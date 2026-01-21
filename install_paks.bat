@@ -5,7 +5,7 @@ REM Set your Valorant path here
 set VALORANT_PATH="C:\Riot Games\VALORANT\live\ShooterGame\Content\Paks"
 
 REM Set download URL (using local repo files)
-set DOWNLOAD_URL="https://raw.githubusercontent.com/jian/val-essentials/main/paks"
+set DOWNLOAD_URL="https://raw.githubusercontent.com/jianonrepeat/val-essentials/main/paks"
 
 REM Create temp folder
 set TEMP_FOLDER=%TEMP%\ValorantPaks_%RANDOM%
@@ -20,17 +20,17 @@ curl -o "%TEMP_FOLDER%\MatureData-WindowsClient.utoc" "%DOWNLOAD_URL%/MatureData
 
 REM Remove existing VNGLogo files
 echo Removing existing VNGLogo files...
-if exist "%VALORANT_PATH%\VNGLogo-WindowsClient.pak" del "%VALORANT_PATH%\VNGLogo-WindowsClient.pak"
-if exist "%VALORANT_PATH%\VNGLogo-WindowsClient.sig" del "%VALORANT_PATH%\VNGLogo-WindowsClient.sig"
-if exist "%VALORANT_PATH%\VNGLogo-WindowsClient.ucas" del "%VALORANT_PATH%\VNGLogo-WindowsClient.ucas"
-if exist "%VALORANT_PATH%\VNGLogo-WindowsClient.utoc" del "%VALORANT_PATH%\VNGLogo-WindowsClient.utoc"
+if exist %VALORANT_PATH%\VNGLogo-WindowsClient.pak del %VALORANT_PATH%\VNGLogo-WindowsClient.pak
+if exist %VALORANT_PATH%\VNGLogo-WindowsClient.sig del %VALORANT_PATH%\VNGLogo-WindowsClient.sig
+if exist %VALORANT_PATH%\VNGLogo-WindowsClient.ucas del %VALORANT_PATH%\VNGLogo-WindowsClient.ucas
+if exist %VALORANT_PATH%\VNGLogo-WindowsClient.utoc del %VALORANT_PATH%\VNGLogo-WindowsClient.utoc
 
 REM Copy to Valorant folder
 echo Installing files...
-copy /Y "%TEMP_FOLDER%\*.pak" "%VALORANT_PATH%"
-copy /Y "%TEMP_FOLDER%\*.sig" "%VALORANT_PATH%"
-copy /Y "%TEMP_FOLDER%\*.ucas" "%VALORANT_PATH%"
-copy /Y "%TEMP_FOLDER%\*.utoc" "%VALORANT_PATH%"
+copy /Y "%TEMP_FOLDER%\*.pak" %VALORANT_PATH%
+copy /Y "%TEMP_FOLDER%\*.sig" %VALORANT_PATH%
+copy /Y "%TEMP_FOLDER%\*.ucas" %VALORANT_PATH%
+copy /Y "%TEMP_FOLDER%\*.utoc" %VALORANT_PATH%
 
 REM Clean up
 echo Cleaning up...
